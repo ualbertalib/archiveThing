@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Build-a-Server Forge</title>
+  <style>
+    body { font-family: sans-serif; max-width: 600px; margin: 2rem auto; }
+    h1 { color: darkslateblue; text-align: center; }
+    form { display: grid; gap: 1rem; }
+    label { font-weight: bold; }
+    input, select, textarea { padding: 0.4rem; border-radius: 6px; border: 1px solid #aaa; width: 100%; }
+    .inline { display: flex; gap: 0.5rem; align-items: center; }
+    button { padding: 0.5rem; border: none; border-radius: 6px; background: darkslateblue; color: white; font-size: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Build-a-Server Forge</h1>
+  <form action="/submit" method="post">
+    
+    <label>Project Name:
+      <input type="text" name="project_name" required>
+    </label>
+
+    <label>Project Start Date:
+      <input type="date" name="start_date" required>
+    </label>
+
+    <label>Project End Date:
+      <input type="date" name="end_date" required>
+    </label>
+
+    <label>Server Size:
+      <select name="server_size">
+        <option>small</option>
+        <option>medium</option>
+        <option>large</option>
+      </select>
+    </label>
+
+    <label>Description:
+      <textarea name="description" rows="4"></textarea>
+    </label>
+
+    <label>Base OS:
+      <select name="base_os">
+        <option>Ubuntu Server</option>
+        <option>Fedora Server</option>
+        <option>NixOS</option>
+        <option>Arch</option>
+      </select>
+    </label>
+
+    <fieldset>
+      <legend>Optional software:</legend>
+      <label><input type="radio" name="optional_software" value="None"> None</label><br>
+      <label><input type="radio" name="optional_software" value="ImageMagick"> ImageMagick</label><br>
+      <label><input type="radio" name="optional_software" value="Anaconda"> Anaconda</label><br>
+      <label><input type="radio" name="optional_software" value="Jupyter"> Jupyter</label><br>
+      <label><input type="radio" name="optional_software" value="pandas"> pandas</label><br>
+      <label><input type="radio" name="optional_software" value="Swift client"> Swift client</label><br>
+      <label><input type="radio" name="optional_software" value="yt-dlp"> yt-dlp</label>
+    </fieldset>
+
+    <label>Disk Size:</label>
+    <div class="inline">
+      <input type="number" name="disk_size" min="1" required>
+      <select name="disk_unit">
+        <option>GB</option>
+        <option>TB</option>
+      </select>
+    </div>
+
+    <label>Data Mount Path:
+      <input type="text" name="mount_path" placeholder="/mnt/data">
+    </label>
+
+    <button type="submit">Forge Server 🚀</button>
+  </form>
+</body>
+</html>
+
