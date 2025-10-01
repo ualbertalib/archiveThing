@@ -10,7 +10,7 @@ app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
 # serve CSS later if you want
-#app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
 @app.get("/", response_class=HTMLResponse)

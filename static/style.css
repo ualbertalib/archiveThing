@@ -1,0 +1,78 @@
+/* static/style.css */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f9f9f9;
+  color: #333333;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+h1 {
+  color: #007C41; /* UAlberta Green */
+  text-align: center;
+}
+
+form {
+  display: grid;
+  gap: 1.5rem;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+label {
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+  padding: 0.5rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #FFD700; /* Gold */
+  box-shadow: 0 0 0 2px rgba(255,215,0,0.3);
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  background-color: #007C41; /* Green */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005a30; /* darker green */
+}
+
+fieldset {
+  border: 1px solid #dddddd;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+legend {
+  font-weight: 600;
+  color: #007C41;
+}
+
+.inline {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
