@@ -3,6 +3,7 @@
 <head>
   <title>Digital Preservation Server Definition</title>
   <link rel="stylesheet" href="/static/style.css">
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
 </head>
 <body>
   <h1>Digital Preservation Server Definition</h1>
@@ -12,24 +13,18 @@
       <input type="text" name="project_name" required>
     </label>
 
-    <label>Project Start Date:
-      <input type="date" name="start_date" required>
-    </label>
+    <div class="inline">
+	    <label>Project Start Date:
+	      <input type="date" name="start_date" required>
+	    </label>
 
-    <label>Project End Date:
-      <input type="date" name="end_date" required>
-    </label>
-
-    <label>Server Size:
-      <select name="server_size">
-        <option>small</option>
-        <option>medium</option>
-        <option>large</option>
-      </select>
-    </label>
+	    <label>Project End Date:
+	      <input type="date" name="end_date" required>
+	    </label>
+    </div>
 
     <label>Description:
-      <textarea name="description" rows="4"></textarea>
+      <textarea name="description" rows="2"></textarea>
     </label>
 
     <label>Base OS:
@@ -49,7 +44,7 @@
       <label><input type="checkbox" name="optional_software" value="ImageMagick"> ImageMagick</label><br>
       <label><input type="checkbox" name="optional_software" value="Anaconda"> Anaconda</label><br>
       <label><input type="checkbox" name="optional_software" value="Jupyter"> Jupyter</label><br>
-      <label><input type="checkbox" name="optional_software" value="Pandas"> Pandas</label>
+      <label><input type="checkbox" name="optional_software" value="Pandas"> Pandas</label><br>
       <label><input type="checkbox" name="optional_software" value="Swift client"> Swift client</label><br>
       <label><input type="checkbox" name="optional_software" value="yt-dlp"> yt-dlp</label><br>
       <label><input type="checkbox" name="optional_software" value="SSH/SFTP"> SSH/SFTP</label>
@@ -64,9 +59,19 @@
       </select>
     </div>
 
+    <div class="inline">
+    <label>Server Size:
+      <select name="server_size">
+        <option>Small</option>
+        <option>Medium</option>
+        <option>Large</option>
+      </select>
+    </label>
+
     <label>Data Mount Path:
       <input type="text" name="mount_path" placeholder="/mnt/data">
     </label>
+    </div>
 
     <button type="submit">Forge Server 🚀</button>
   </form>
