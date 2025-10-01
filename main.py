@@ -18,7 +18,7 @@ async def read_form(request: Request):
     return templates.TemplateResponse("form.html", {"request": request})
 
 
-@app.post("/submit", response_class=HTMLResponse)
+@app.post("/submit", response_class=HTMLResponse, name="submit_form")
 async def submit_form(
     request: Request,
     project_name: str = Form(...),
@@ -27,7 +27,7 @@ async def submit_form(
     server_size: str = Form(...),
     description: str = Form(...),
     base_os: str = Form(...),
-    optional_software: str = Form(...),
+    optional_software: list[str] = Form([]),
     disk_size: str = Form(...),
     disk_unit: str = Form(...),
     mount_path: str = Form(...),
@@ -41,7 +41,7 @@ async def submit_form(
     Server Size: {server_size}
     Description: {description}
     Base OS: {base_os}
-    Optional Software: {optional_software}
+    Optional Software: {', '.join(optional_software) if optional_software else 'None'}
     Disk: {disk_size} {disk_unit}
     Mount Path: {mount_path}
     """

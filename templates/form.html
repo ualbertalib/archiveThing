@@ -6,8 +6,8 @@
 </head>
 <body>
   <h1>Digital Preservation Server Definition</h1>
-  <form action="/submit" method="post">
-    
+   <form action="{{ request.url_for('submit_form') }}" method="post">
+
     <label>Project Name:
       <input type="text" name="project_name" required>
     </label>
@@ -34,10 +34,13 @@
 
     <label>Base OS:
       <select name="base_os">
-        <option>Ubuntu Server</option>
-        <option>Fedora Server</option>
+        <option>Don't Care</option>
+        <option>Ubuntu</option>
+        <option>CentOS Stream</option>
+        <option>Fedora</option>
         <option>NixOS</option>
         <option>Arch</option>
+        <option>Other</option>
       </select>
     </label>
 
