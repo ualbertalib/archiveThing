@@ -5,4 +5,4 @@
 ## Requirements
 
 * `dnf install python3-gunicorn` to get a WSGI server installed
-* 
+* `dnf install python3-pip` to get pip installed
